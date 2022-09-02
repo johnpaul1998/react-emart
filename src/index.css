@@ -1,0 +1,56 @@
+/* <!-- ---- Initial/Setup ---- --> */
+:root{
+  --lg-font: 'Kaisei Tokumin', serif;
+  --sm-font: 'Poppins', sans-serif;
+  --pink: #e5345b;
+}
+body {
+  font-family: var(--sm-font);
+}
+.btn:not(.nav-btns button){
+  background-color: white;
+  color: rgb(85, 85, 85);
+  padding: 10px 28px;
+  border-radius: 25px;
+  border: 1px solid rgb(85, 85, 85);
+}
+.btn:not(.nav-btns button):hover{
+  background: var(--pink);
+  color: white;
+  border: var(--pink);
+}
+.title h2::before{
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 50px;
+  background-color: var(--pink);
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+/* <!-- ---- Navbar ---- --> */
+.navbar-brand img{
+  width: 30px;
+}
+#brand-name{
+  letter-spacing: 2px;
+  font-family: var(--lg-font);
+}
+.navbar{
+ box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1); 
+}
+.nav-link:hover{
+  color: var(--pink) !important;
+}
+.nav-item{
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+@media(min-width: 992px){
+  .nav-item{
+      border-bottom: none;
+  }
+}
+
+/* <!-- ---- Hero ---- --> */
+
