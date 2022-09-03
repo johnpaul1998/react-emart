@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/Footer";
 import Navibar from "./components/Navibar";
 import Home from "./components/pages/Home";
+import Product from "./components/pages/Product";
+import Products from "./components/pages/Products";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Navibar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );

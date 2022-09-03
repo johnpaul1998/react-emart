@@ -1,8 +1,4 @@
-import {
-  faHeart,
-  faSearch,
-  faShoppingCart,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink, Navbar, Container } from "react-bootstrap";
@@ -17,7 +13,7 @@ export default function Navibar() {
           className="navbar-brand d-flex align-items-center justify-content-between order-lg-0"
         >
           <img
-            src="https://icons.veryicon.com/png/o/object/color-icon/handbag-11.png"
+            src="https://cdn-icons-png.flaticon.com/512/2611/2611215.png"
             alt="Site Icon"
             classNameName="img-fluid"
           />
@@ -25,28 +21,27 @@ export default function Navibar() {
         </NavLink>
 
         <div className="nav-btns order-lg-2">
-          <button className="btn position-relative" type="button">
-            <FontAwesomeIcon icon={faShoppingCart} />
-            <span className="badge position-absolute top-0 bg-primary translate-middle start-100">
-              5
-            </span>
-          </button>
-          <button className="btn position-relative" type="button">
-            <FontAwesomeIcon icon={faHeart} />
-            <span className="badge position-absolute top-0 bg-primary translate-middle start-100">
-              2
-            </span>
-          </button>
-          <button className="btn" type="button">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+          <>
+            <NavLink className="btn position-relative" type="button">
+              <FontAwesomeIcon icon={faShoppingCart} />
+              <span className="nav-btn-label">CART</span>
+              {0}
+            </NavLink>
+            <NavLink className="btn position-relative" type="button">
+              <FontAwesomeIcon icon={faSignOut} />
+              <span className="nav-btn-label">LOGOUT</span>
+            </NavLink>
+          </>
         </div>
 
         <Navbar.Toggle className="border-0">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
 
-        <div className="collapse navbar-collapse order-lg-1" id="navMenu">
+        <Navbar.Collapse
+          className="collapse navbar-collapse order-lg-1"
+          id="navMenu"
+        >
           <ul className="navbar-nav mx-auto text-center">
             <li className="nav-item px-2 py-2">
               <Link to="/" className="nav-link text-dark">
@@ -54,32 +49,22 @@ export default function Navibar() {
               </Link>
             </li>
             <li className="nav-item px-2 py-2">
-              <Link to="/" className="nav-link text-dark">
-                COLLECTION
+              <Link to="/products" className="nav-link text-dark">
+                PRODUCTS
               </Link>
             </li>
             <li className="nav-item px-2 py-2">
-              <Link to="/" className="nav-link text-dark">
-                SPECIALS
-              </Link>
-            </li>
-            <li className="nav-item px-2 py-2">
-              <Link to="/" className="nav-link text-dark">
-                BLOGS
-              </Link>
-            </li>
-            <li className="nav-item px-2 py-2">
-              <Link to="/" className="nav-link text-dark">
+              <NavLink to="/" className="nav-link text-dark">
                 ABOUT US
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item px-2 py-2">
-              <Link to="/" className="nav-link text-dark">
-                POPULAR
-              </Link>
+              <NavLink to="/" className="nav-link text-dark">
+                CONTACT
+              </NavLink>
             </li>
           </ul>
-        </div>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
